@@ -5,7 +5,7 @@
 
 - name: ensure httpd is running
   service:
-    name: httpd
+   — name: httpd
     state: started
     #enabled: yes
 
