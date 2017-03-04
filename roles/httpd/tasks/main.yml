@@ -16,7 +16,7 @@
   notify: restart httpd
   
 - firewalld:
-    service: https
+    service: http
     permanent: true
     state: enabled
   notify: restart firewalld
