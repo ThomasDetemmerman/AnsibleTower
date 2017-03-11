@@ -1,8 +1,5 @@
 ---
 - name: install PHP
   package:
-    name: {{ items }}
-    with-items:
-      - PHP
-      - php-mysql
+    name: PHP, PHP-mysql
     state: present
