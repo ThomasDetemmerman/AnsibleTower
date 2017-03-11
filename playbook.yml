@@ -6,3 +6,4 @@
   sudo: true
   roles:
    - httpd
+   - mariadb

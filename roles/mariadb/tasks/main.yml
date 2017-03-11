@@ -1,0 +1,5 @@
+---
+
+- name: install maria DB
+  package: mariadb-server
+  state: present
