@@ -1,5 +1,5 @@
 ---
-- name: install httpd
+- name: install mariadb server
   package:
     name: mariadb-server
     state: present
