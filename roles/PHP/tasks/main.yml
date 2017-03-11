@@ -1,5 +1,5 @@
 ---
 - name: install PHP
   package:
-    name: php php-mysql
+    name: php, php-mysql
     state: present
