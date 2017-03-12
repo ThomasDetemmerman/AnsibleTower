@@ -3,3 +3,8 @@
   package:
     name: mariadb-server
     state: present
+
+- name: start mariadb
+  serice:
+    name: mariadb
+    state: started
