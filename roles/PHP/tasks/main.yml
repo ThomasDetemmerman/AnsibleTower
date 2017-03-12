@@ -3,3 +3,4 @@
   package:
     name: php, php-mysql
     state: present
+  notify: restart httpd
