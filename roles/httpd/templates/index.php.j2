@@ -3,7 +3,7 @@
 <p>
 {{ groupname }}
 
-{% for member in  groups['{{ groupname }}'] %}
+{% for member in  groups['web'] %}
 
 server.{{ hostvars[member]['myid'] }}={{ hostvars[member]['ansible_hostname'] }}:{{ hostvars[member]['startport'] }}:{{ hostvars[member]['endport'] }}
 
