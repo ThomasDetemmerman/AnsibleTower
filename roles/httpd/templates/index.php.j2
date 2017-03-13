@@ -7,11 +7,11 @@
 
 {% for member in  play_hosts %}
 
- memberaddr: {{ hostvars[member]['myid'] }}
+ server.{{ hostvars[member]['myid'] }}{{% if {{ port }}is defined %}}{{ hostvars[member]['port'] }}{{% endif %}}
 {% endfor %}
 
 
-{{ hostvars['192.168.100.21']['myid'] }}
+
 
 </p>
 
