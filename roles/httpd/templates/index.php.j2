@@ -11,7 +11,7 @@
 server.{{ hostvars[member]['myid'] }}={{ hostvars[member]['ansible_hostname'] }}
 
 
-{% if {{ hostvars[member]['myid'] }} is defined %}
+{% if {{ myid }} is defined %}
   test
 {% else %}
     Kenny looks okay --- so far
