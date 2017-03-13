@@ -5,10 +5,17 @@
 {{ startport }}{{ endport }}
 
 
+
 {% for member in  groups['web'] %}
 
 server.{{ hostvars[member]['myid'] }}={{ hostvars[member]['ansible_hostname'] }}
 
+
+{% if {{ hostvars[member]['myid'] }} is defined %}
+  test
+{% else %}
+    Kenny looks okay --- so far
+{% endif %}
 
 {% endfor %}
 </p>
