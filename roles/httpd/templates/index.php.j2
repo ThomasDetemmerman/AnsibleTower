@@ -7,7 +7,10 @@
 
 {% for member in  play_hosts %}
 
- server.{{ hostvars[member]['myid'] }}{% extends {{ port }} if port is defined %}
+ server.{{ hostvars[member]['myid'] }}
+ {% if port is defined %}
+ {{ port }}
+ {% endif %}
 {% endfor %}
 
 
