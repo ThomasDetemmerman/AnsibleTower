@@ -7,8 +7,14 @@
 
 {% for member in  play_hosts %}
 
- server.{{ hostvars[member]['myid'] }}{% if hostvars[member]['port'] is defined %}{{ hostvars[member]['port'] }}
- {% endif %}
+server.{{ hostvars[member]['myid'] }}=hostvars[member]['ansible_hostname']
+{% if hostvars[member]['startport'] is defined %}
+{{ hostvars[member]['startport'] }}
+{% endif %}
+{% endfor %}
+{% if hostvars[member]['endport'] is defined %}
+{{ hostvars[member]['endport'] }}
+{% endif %}
 {% endfor %}
 
 
