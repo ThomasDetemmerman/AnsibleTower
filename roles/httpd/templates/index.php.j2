@@ -6,7 +6,7 @@
 {% endfor %}
 
 
-{{% hostvar['192.168.100.22']['myid'] %}}
+{{ hostvars['192.168.100.21']['ansible_eth0']['ipv4']['address'] }}
 
 </p>
 
