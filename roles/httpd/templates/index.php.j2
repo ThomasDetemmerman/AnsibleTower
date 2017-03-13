@@ -1,16 +1,11 @@
 <h1>This webpage is created using Ansible</h1>
 <h3>hostname: {{ ansible_hostname }}</h3>
 <p>
-{% for group in group_names %}
-  {{ group }}
-{% endfor %}
 
-{% for member in  web %}
 
-server.{{ hostvars[member]['myid'] }}={{ hostvars[member]['ansible_hostname'] }}:
-{{ hostvars[member]['startport'] }}
-:
-{{ hostvars[member]['endport'] }}
+{% for member in  groups['{{ groupname }}'] %}
+
+server.{{ hostvars[member]['myid'] }}={{ hostvars[member]['ansible_hostname'] }}:{{ hostvars[member]['startport'] }}:{{ hostvars[member]['endport'] }}
 
 {% endfor %}
 
