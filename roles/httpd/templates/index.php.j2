@@ -7,7 +7,7 @@
 
 {% for member in  play_hosts %}
 
-  {{ hostvars['{{ member }}']['myid'] }}
+ memberaddr: {{ hostvars[member]['ansible_eth0']['ipv4']['address'] }}
 {% endfor %}
 
 
