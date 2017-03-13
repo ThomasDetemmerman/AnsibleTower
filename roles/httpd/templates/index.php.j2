@@ -6,7 +6,8 @@
 {% endfor %}
 
 {% for member in  play_hosts %}
-  {{ member }}
+
+  {{ hostvars['{{ member }}']['myid'] }}
 {% endfor %}
 
 
