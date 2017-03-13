@@ -5,15 +5,13 @@
   {{ group }}
 {% endfor %}
 
-{% for member in  play_hosts %}
+{% for member in  web %}
 
-server.{{ hostvars[member]['myid'] }}={{ hostvars[member]['ansible_hostname'] }}
-{% if hostvars[member]['startport'] is defined %}
+server.{{ hostvars[member]['myid'] }}={{ hostvars[member]['ansible_hostname'] }}:
 {{ hostvars[member]['startport'] }}
-{% endif %}
-{% if hostvars[member]['endport'] is defined %}
+:
 {{ hostvars[member]['endport'] }}
-{% endif %}
+
 {% endfor %}
 
 
