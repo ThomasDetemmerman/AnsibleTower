@@ -1,7 +1,7 @@
 <h1>This webpage is created using Ansible</h1>
 <h3>hostname: {{ ansible_hostname }}</h3>
 <p>
-
+{{ groupname }}
 
 {% for member in  groups['{{ groupname }}'] %}
 
