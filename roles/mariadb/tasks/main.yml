@@ -4,7 +4,7 @@
     name: mariadb-server
     state: present
 
-- name: start mariadb
-  serice:
-    name: mariadb
+- name: ensure httpd is running
+  service:
+    name: httpd
     state: started
