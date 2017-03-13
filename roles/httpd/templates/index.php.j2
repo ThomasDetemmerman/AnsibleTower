@@ -9,7 +9,7 @@
 
  server.{{ hostvars[member]['myid'] }}
  {% if port is defined %}
- {{ port }}
+ {{ hostvars[member]['port'] }}
  {% endif %}
 {% endfor %}
 
