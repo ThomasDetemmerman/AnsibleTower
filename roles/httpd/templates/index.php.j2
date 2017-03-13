@@ -9,9 +9,6 @@
 
 server.{{ hostvars[member]['myid'] }}={{ hostvars[member]['ansible_hostname'] }}
 
-{% if  {{ hostvars[member]['startport'] }} is defined %}
-{{ startport }}
-{% endif %}
 
 {% endfor %}
 </p>
