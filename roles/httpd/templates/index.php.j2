@@ -7,7 +7,7 @@
 
 {% for member in  play_hosts %}
 
-server.{{ hostvars[member]['myid'] }}=hostvars[member]['ansible_hostname']
+server.{{ hostvars[member]['myid'] }}=
 {% if hostvars[member]['startport'] is defined %}
 {{ hostvars[member]['startport'] }}
 {% endif %}
