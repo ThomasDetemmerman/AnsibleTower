@@ -3,31 +3,19 @@
 <p>
 {{ groupname }}
 {{ startport }}{{ endport }}
+
+
 {% for member in  groups['web'] %}
 
-server.{{ hostvars[member]['myid'] }}={{ hostvars[member]['ansible_hostname'] }}:
-{% if  {{ hostvars[member]['startport'] }} is defined%}
+server.{{ hostvars[member]['myid'] }}={{ hostvars[member]['ansible_hostname'] }}
+
+{% if  {{ hostvars[member]['startport'] }} is defined %}
 {{ hostvars[member]['startport'] }}
 {% else %}
 {{ startport }}
 {% endif %}
-:
-{% if  {{ hostvars[member]['endport'] }} is defined%}
-{{ hostvars[member]['endport'] }}
-{% else %}
-{{ endport }}
-{% endif %}
+
 {% endfor %}
-
- {#
-Het lijkt misschien een beetje raar om gebruik te maken van deze if-else structuur.
-De reden hiervoor is dat als een host de variable default waarde voor bv startport overschrijft, dan kunnen enkel
-de andere hosts hieraan via het gebruik van fact var's (hostvars[member]['endport']), echter als deze host
-deze variable niet overschrijft bestaat deze fact var NIET en krijg je een undifined variabele. Daarom wordt er
-de 'else' gebruikt om de default waarde te gebruiken.
-  #}
-
-
 </p>
 
 
