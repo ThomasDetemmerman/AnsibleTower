@@ -1,21 +1,5 @@
 <h1>This webpage is created using Ansible</h1>
 <h3>hostname: {{ ansible_hostname }}</h3>
-<p>
-{{ groupname }}
-{{ startport }}{{ endport }}
-
-
-
-{% for member in  groups[groupname] %}
-
-server.{{ hostvars[member]['myid'] }}={{ hostvars[member]['ansible_hostname'] }}:{% if hostvars[member]['startport'] is defined %}
-{{ hostvars[member]['startport'] }}
-{% else %}{{ startport }}{% endif %}:{% if hostvars[member]['endport'] is defined %}
-{{ hostvars[member]['endport'] }}
-{% else %}{{ endport }}{% endif %}
-{% endfor %}
-
-</p>
 
 
 <?php
