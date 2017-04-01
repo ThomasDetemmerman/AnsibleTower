@@ -7,4 +7,4 @@
 - name: ensure httpd is running
   service:
     name: mariadb
-    state: stopped
+    state: running
