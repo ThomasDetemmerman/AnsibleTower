@@ -1,0 +1,8 @@
+---
+- hosts:
+    - web
+  sudo: true
+  tasks:
+    - file:
+      path: /test
+      state: touch
