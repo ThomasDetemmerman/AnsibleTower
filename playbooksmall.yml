@@ -3,6 +3,6 @@
     - web
   sudo: true
   tasks:
-    - file:
+  - file:
       path: /test
       state: touch
